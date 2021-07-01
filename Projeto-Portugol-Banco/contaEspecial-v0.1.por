@@ -50,10 +50,17 @@ programa
 		// Contador de movimentos ++
 		cont++
 		
-		escreva("Deseja continuar?\n Digite S/N")
+		escreva("\nDeseja continuar?\n Digite S/N")
 		leia(opc)
 		
-		}enquanto(opc != 'n')
+		}enquanto(opc != 'n' ou cont >= 10)
+
+		se(cont>=10){
+			escreva("\nLimite de movimentação atingido")
+			escreva("Obrigado por utilizar *NOME DO BANCO*")
+		}senao{
+			escreva("\nObrigado por utilizar *NOME DO BANCO*")
+		}
 	}
 }
 /* $$$ Portugol Studio $$$ 
@@ -61,7 +68,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 883; 
+ * @POSICAO-CURSOR = 1398; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
