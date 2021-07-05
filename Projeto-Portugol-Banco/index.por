@@ -5,11 +5,13 @@ programa
 	{
 	
 		inteiro opc
-		real saldo = 100.0
+		real saldo = 0.0
 		real limite = 1000.0
 		inteiro diaAniversario = 3
 
 		faca{
+			escreva("BANCO - G8: FCBM\n")
+			escreva("*>>>>Juntos fazemos seu dinheiro evoluir<<<<*\n")
 			escreva("\nDigite a opcao desejada:\n 1- Conta poupanca\n 2- Conta corrente\n 3- Conta Especial\n 4- Conta Empresa\n 5- Conta Estudantil\n 6- Sair\n")
 			leia(opc)
 			escolha(opc){
@@ -369,7 +371,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 2812; 
+ * @POSICAO-CURSOR = 65; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
