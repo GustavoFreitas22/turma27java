@@ -121,8 +121,12 @@ programa
 					aux = saldo - valor
 					limite = limite + aux
 					saldo = 0	
-				}senao se (valor > saldo e valor > limite){
+				}senao se (valor > (saldo +limite)){
 					escreva("Valor excedido!")
+				}senao se((saldo+limite)>=valor){
+					aux = saldo - valor
+					limite = limite + aux
+					saldo = 0
 				}
 				
 			}
@@ -365,7 +369,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 1936; 
+ * @POSICAO-CURSOR = 2812; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
