@@ -16,8 +16,9 @@ public class LojaEd {
 		Scanner read = new Scanner(System.in);
 		String auxCod;
 		int qtdCompra;
-		int totalCompra;
-		double total;
+		double totalCompra = 0;
+		double total=0;
+		double auxImposto;
 		
 		
 		
@@ -58,7 +59,17 @@ public class LojaEd {
 					}
 				}
 			}else if(opc == 4) {
-				System.out.println("Ainda estamos implementando :)");
+				for(int i = 0; i<10; i++) {
+					if(carrinho[i]!=0) {
+						System.out.println(codigo[i]+"\t"+produtos[i]+"\t"+precos[i]+"\t"+carrinho[i]+"\t"+(carrinho[i]*precos[i]));
+						totalCompra = totalCompra+(precos[i]*carrinho[i]);
+					}
+					
+				}
+				auxImposto= totalCompra*0.09;
+				totalCompra+=auxImposto;
+				System.out.println("O total com 9% de impostos é: R$"+totalCompra);
+				opc = 5;
 			}
 			
 		}while(opc != 5);
