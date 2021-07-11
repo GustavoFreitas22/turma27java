@@ -29,43 +29,43 @@ public class RockLee extends Ninja{
 	
 	public void desviar(int danoGolpe) {
 		if(this.qtdDesvios==0) {
-			System.out.println("Não posso mais desviar!");
+			System.out.println("-RockLee:\nNão posso mais desviar!");
 			this.receberGolpe(danoGolpe);
 		}else{
 			this.qtdDesvios--;
-			System.out.println("Ainda posso desviar: "+this.qtdDesvios);
+			System.out.println("-RockLee:\nAinda posso desviar: "+this.qtdDesvios);
 		}
 	}
 	public int soco() {
 		if(peso==false) {
-			System.out.println("Uau, aqueles pesos estavam me segurando mesmo!");
+			System.out.println("-RockLee:\nUau, aqueles pesos estavam me segurando mesmo!");
 			this.golpe = 20*this.getForca(); 
 		}else {
-			System.out.println("Aaaaaa toma isso!");
+			System.out.println("-RockLee:\nAaaaaa toma isso!");
 			this.golpe = 10*this.getForca();
 		}
 		return golpe;
 	}
 	public int chute() {
 		if(peso==false) {
-			System.out.println("Aaaaaah dessa vez voce não escapa!");
+			System.out.println("-RockLee:\nAaaaaah dessa vez voce não escapa!");
 			this.golpe = 30*this.getForca(); 
 		}else {
-			System.out.println("Aaaaaa toma isso!");
+			System.out.println("-RockLee:\nAaaaaa toma isso!");
 			this.golpe = 15*this.getForca();
 		}
 		return golpe;
 	}
 	public void tirarPeso() {
 		this.peso = false;
-		System.out.println("Obrigado por me deixar tirar os pesos Gai Sensei");
+		System.out.println("-RockLee:\nObrigado por me deixar tirar os pesos Gai Sensei");
 	}
 	public int lotusPrimaria() {
 		if(peso==false) {
-			System.out.println("Esse é o meu golpe definitivo!");
+			System.out.println("-RockLee:\nEsse é o meu golpe definitivo!");
 			this.golpe = 120; 
 		}else {
-			System.out.println("Eu vou mostrar que o esforço vence o talento nato!");
+			System.out.println("-RockLee:\nEu vou mostrar que o esforço vence o talento nato!");
 			this.golpe = 80;
 		}
 		return golpe;
@@ -73,7 +73,7 @@ public class RockLee extends Ninja{
 	public void abrirPortoesChakra() {
 		
 		this.setForca(10);
-		System.out.println("Essa é a minha técnica lendaria!!!\nPortão da dor ABRAAAAAA!!! ");
+		System.out.println("-RockLee:\nEssa é a minha técnica lendaria!!!\nPortão da dor ABRAAAAAA!!! ");
 		this.qtdDesvios+=10;
 	}
 }

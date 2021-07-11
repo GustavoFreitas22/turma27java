@@ -17,26 +17,26 @@ public class Gaara extends Ninja{
 	}
 	
 	public int caixaoDeAreia() {
-		System.out.println("Caixão de areia!!!");
+		System.out.println("-Gaara:\nCaixão de areia!!!");
 		this.golpe = 80*this.getForca();
 		return golpe;
 	}
 	public int golpePadrao() {
-		System.out.println("Você é fraco demais!\nGolpe de areia!");
+		System.out.println("-Gaara:\nVocê é fraco demais!\nGolpe de areia!");
 		this.golpe=25*this.getForca();
 		return this.golpe;
 	}
 	public void escudoDeAreia(int danoGolpe) {
 		if(qtdAreia<(danoGolpe/2)) {
-			System.out.println("O ataque foi muito forte!\nNão consegui me Defender!!!");
+			System.out.println("-Gaara:\nO ataque foi muito forte!\nNão consegui me Defender!!!");
 			this.receberGolpe(danoGolpe);
 		}else {
-			System.out.println("Isso não vai passar pela defesa perfeita!");
+			System.out.println("-Gaara:\nIsso não vai passar pela defesa perfeita!");
 			this.qtdAreia = this.qtdAreia-(danoGolpe/2);
 		}
 	}
 	public void carregarAreia() {
-		System.out.println("Areia, volte para mim!");
+		System.out.println("-Gaara:\nAreia, volte para mim!");
 		this.qtdAreia += 60;
 	}
 	

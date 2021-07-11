@@ -4,7 +4,7 @@ public class Ninja {
 	private String nome;
 	private String aldeia;
 	private int forca;
-	private int hp;
+	private int hp = 400;
 	private int mana;
 	public Ninja(String nome, String aldeia, int forca) {
 		super();
