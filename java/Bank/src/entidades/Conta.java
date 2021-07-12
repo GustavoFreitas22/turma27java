@@ -5,7 +5,7 @@ import javax.swing.*;
 public abstract class Conta {
 	private int numero;
 	private String nomeCliente;
-	private double saldo;
+	protected double saldo;
 	public Conta(int numero, String nomeCliente) {
 		super();
 		this.numero = numero;
@@ -24,24 +24,31 @@ public abstract class Conta {
 		return saldo;
 	}
 	public void credito(double valorCredito) {
-		this.saldo = this.saldo + valorCredito;
+		if(valorCredito<=0) {
+			JOptionPane.showMessageDialog(null, "Valor para credito invalido!");
+		}else {
+			this.saldo = this.saldo + valorCredito;
+			JOptionPane.showMessageDialog(null, "Operação realizada com sucesso!\n Seu novo saldo é: R$"+this.saldo);
+		}
+		
 	}
 	public void debito(double valorDebito) {
 		if(valorDebito<=0) {
-			System.out.println("Eai queride? Eu sou uma piada?");
+			JOptionPane.showMessageDialog(null,"Valor para debito invalido!");
 		}else if(valorDebito>saldo){
-			System.out.println("Ta de brincadeira né xuxu? Tem isso tudo de dinheiro aqui não kk");
+			JOptionPane.showMessageDialog(null,"Falha na operação!\nSaldo insulficiente");
 		}else {
 			this.saldo = this.saldo-valorDebito;
-			System.out.println("Só se vive uma vez!");
+			JOptionPane.showMessageDialog(null,"Operação realizada com sucesso!\nSeu novo saldo é de: R$"+this.saldo);
 		}
 		
 		
 	}
+	//Tela padrão para as contas
 	public void telas() {
 		int opc;
 		do {
-			opc = Integer.parseInt(JOptionPane.showInputDialog("Bem vinde a sua conta *Insira aqui o tipo de conta* digite:\n1- opcao01\n2- opcao02\n3- opcao03\n4- para sair"));
+			opc = Integer.parseInt(JOptionPane.showInputDialog("Bem vinde a sua conta *Insira aqui o tipo de conta* digite:\n1- opcao01\n2- opcao02\n3- opcao03\n4- para sair\n\nSaldo Atual: R$"+this.saldo));
 			switch(opc) {
 				case 1:
 					JOptionPane.showMessageDialog(null,"Opção 01");
@@ -51,6 +58,9 @@ public abstract class Conta {
 					break;
 				case 3:
 					JOptionPane.showMessageDialog(null,"Opção 03");
+					break;
+				case 4:
+					JOptionPane.showMessageDialog(null,"Opção 04");
 					break;
 				default: 
 					JOptionPane.showMessageDialog(null,"Opção invalida!\nPor favor, tente novamente!");

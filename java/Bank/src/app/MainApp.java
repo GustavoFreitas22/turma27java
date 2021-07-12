@@ -1,5 +1,6 @@
 package app;
 
+import java.util.*;
 import javax.swing.*;
 import entidades.Conta;
 import entidades.ContaEspecial;
@@ -8,8 +9,16 @@ public class MainApp {
 
 	public static void main(String[] args) {
 		int opc;
+		int numero;
+		String nome;
 		
-		ContaEspecial teste = new ContaEspecial(99, "Jose", 1000);
+		
+		Random random = new Random();
+		numero = random.nextInt(1000);
+		nome= JOptionPane.showInputDialog("Seja Bem Vinde ao Banco FCBM!\nPoderia nos informar seu nome?");
+		JOptionPane.showMessageDialog(null,"Olá "+nome+" sua conta foi aberta!\nO numero dela é: "+numero);
+		
+		ContaEspecial contEspecial = new ContaEspecial(numero, nome, 1000);
 		
 		do {
 			JOptionPane.showMessageDialog(null,"Bem Vindo ao Banco G8 - FCBM\nJuntos fazemos o seu Dinheiro evoluir!");
@@ -17,13 +26,13 @@ public class MainApp {
 			
 			switch(opc) {
 				case 1:
-					teste.telas();
+					JOptionPane.showMessageDialog(null,"Estamos implementando! :)");
 					break;
 				case 2:
 					JOptionPane.showMessageDialog(null,"Estamos implementando! :)");
 					break;
 				case 3:
-					JOptionPane.showMessageDialog(null,"Estamos implementando! :)");
+					contEspecial.telas();
 					break;
 				case 4:
 					JOptionPane.showMessageDialog(null,"Estamos implementando! :)");
