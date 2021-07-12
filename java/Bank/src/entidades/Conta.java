@@ -1,6 +1,8 @@
 package entidades;
 
-public class Conta {
+import javax.swing.*;
+
+public abstract class Conta {
 	private int numero;
 	private String nomeCliente;
 	private double saldo;
@@ -35,6 +37,26 @@ public class Conta {
 		}
 		
 		
+	}
+	public void telas() {
+		int opc;
+		do {
+			opc = Integer.parseInt(JOptionPane.showInputDialog("Bem vinde a sua conta *Insira aqui o tipo de conta* digite:\n1- opcao01\n2- opcao02\n3- opcao03\n4- para sair"));
+			switch(opc) {
+				case 1:
+					JOptionPane.showMessageDialog(null,"Opção 01");
+					break;
+				case 2:
+					JOptionPane.showMessageDialog(null,"Opção 02");
+					break;
+				case 3:
+					JOptionPane.showMessageDialog(null,"Opção 03");
+					break;
+				default: 
+					JOptionPane.showMessageDialog(null,"Opção invalida!\nPor favor, tente novamente!");
+					break;
+			}
+		}while(opc!=4);
 	}
 	
 }

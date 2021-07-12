@@ -22,7 +22,7 @@ public class Main {
 			opc = Integer.parseInt(JOptionPane.showInputDialog(">>Bem vindo a luta Rock Lee Vs Gaara!<<\nPor favor Digite:\n1- Para começar a luta\n2- Saber o vencedor da luta\n3-Sair"));
 			switch(opc) {
 			case 1:
-				funcInicio();
+				luta();
 				break;
 			case 2:
 				mostraVenc();
@@ -36,7 +36,7 @@ public class Main {
 			}
 		}while(opc!=3);
 	}
-	public static void funcInicio() {
+	public static void luta() {
 		System.out.println("Ainda estamos implementando :)");
 	}
 	public static void mostraVenc() {

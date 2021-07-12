@@ -20,6 +20,7 @@ public class Cavalo extends Animal {
 		System.out.println("Bora pé de pano!");
 	}
 	
+	@Override
 	public void emitirSom() {
 		System.out.println(" *Imagine aqui o som de um CAVALO* ");
 	}

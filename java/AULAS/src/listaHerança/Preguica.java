@@ -20,6 +20,7 @@ public class Preguica extends Animal {
 		System.out.println("Bateu a maior preguiça, vou tirar um cochilo no gaio");
 	}
 	
+	@Override
 	public void emitirSom() {
 		System.out.println("“Não me importa quem começou. Eu acabo com isso.”\n - Sid, Era do Gelo");
 	}

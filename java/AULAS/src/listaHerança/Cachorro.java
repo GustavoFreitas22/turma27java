@@ -20,6 +20,7 @@ public class Cachorro extends Animal{
 		System.out.println("Run forest Run!!!");
 	}
 	
+	@Override
 	public void emitirSom() {
 		System.out.println("Au Au me de comida humano Au Au");
 	}
