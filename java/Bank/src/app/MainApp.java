@@ -4,6 +4,7 @@ import java.util.*;
 import javax.swing.*;
 import entidades.Conta;
 import entidades.ContaEspecial;
+import entidades.ContaPoupanca;
 
 public class MainApp {
 
@@ -11,14 +12,19 @@ public class MainApp {
 		int opc;
 		int numero;
 		String nome;
+		int dia=0;
 		
-		
+		// Criação de conta:
 		Random random = new Random();
 		numero = random.nextInt(1000);
 		nome= JOptionPane.showInputDialog("Seja Bem Vinde ao Banco FCBM!\nPoderia nos informar seu nome?");
+		dia = Integer.parseInt(JOptionPane.showInputDialog("Digite o dia de hoje:"));
 		JOptionPane.showMessageDialog(null,"Olá "+nome+" sua conta foi aberta!\nO numero dela é: "+numero);
 		
+		
+		// Instanciando Objetos:
 		ContaEspecial contEspecial = new ContaEspecial(numero, nome, 1000);
+		ContaPoupanca contPoup = new ContaPoupanca(numero, nome, dia);
 		
 		do {
 			JOptionPane.showMessageDialog(null,"Bem Vindo ao Banco G8 - FCBM\nJuntos fazemos o seu Dinheiro evoluir!");
@@ -26,7 +32,7 @@ public class MainApp {
 			
 			switch(opc) {
 				case 1:
-					JOptionPane.showMessageDialog(null,"Estamos implementando! :)");
+					contPoup.telas();
 					break;
 				case 2:
 					JOptionPane.showMessageDialog(null,"Estamos implementando! :)");
