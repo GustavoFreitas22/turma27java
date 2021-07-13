@@ -24,7 +24,6 @@ public class ContaPoupanca extends Conta{
 		if(dia == diaAniversario) {
 			ajuste = this.saldo*0.09;
 			this.credito(ajuste);
-			
 			JOptionPane.showMessageDialog(null,"Parabéns hoje é aniversário da sua conta!\nSeu saldo foi ajustado para: R$"+this.getSaldo());
 		}else {
 			JOptionPane.showMessageDialog(null,"Infelizmente hoje não é o aniversário da sua conta!");
@@ -38,7 +37,7 @@ public class ContaPoupanca extends Conta{
 		int dia;
 		boolean verificado = false;
 		do {
-			opc = Integer.parseInt(JOptionPane.showInputDialog("Bem vinde "+this.getNomeCliente()+" a sua Conta Poupança - Nº "+this.getNumero()+" digite:\n1-Debito\n2- Credito\n3- Verificar data de Aniversario da conta\n4- para sair\n\nSaldo atual: R$"+this.getSaldo()));
+			opc = Integer.parseInt(JOptionPane.showInputDialog("Bem vinde "+this.getNomeCliente()+" a sua Conta Poupança - Nº "+this.getNumero()+" digite:\n1-Debito\n2- Credito\n3- Verificar data de Aniversario da conta\n4- para sair\n\nSaldo atual: R$"+this.getSaldo()+"\n\n Quantidade de movimentos restantes: "+(10-this.qtdMovimentos)));
 			switch(opc) {
 				case 1:
 					valor = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor a ser Debitado:"));
@@ -65,6 +64,9 @@ public class ContaPoupanca extends Conta{
 					break;
 			}
 		}while(opc!=4);
+		if(this.qtdMovimentos>10) {
+			JOptionPane.showMessageDialog(null, "Quantidade de movimentos exedida!");
+		}
 	}
 	
 }

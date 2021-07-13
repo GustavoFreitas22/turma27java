@@ -50,6 +50,7 @@ public class ContaEspecial extends Conta {
 		}else {
 			this.saldo = this.saldo-valorDebito;
 			JOptionPane.showMessageDialog(null,"Operação realizada com sucesso!\nSeu novo saldo é de: R$"+this.saldo);
+			this.qtdMovimentos++;
 		}
 		
 		
@@ -60,7 +61,7 @@ public class ContaEspecial extends Conta {
 		int opc;
 		double valor;
 		do {
-			opc = Integer.parseInt(JOptionPane.showInputDialog("Bem vinde "+this.getNomeCliente()+" a sua Conta Especial - Nº "+this.getNumero()+" digite:\n1-Debito\n2- Credito\n3- Utilizar o Limite\n4- para sair\n\nSaldo atual: R$"+this.getSaldo()+"\nSaldo do Limite: R$"+this.limite));
+			opc = Integer.parseInt(JOptionPane.showInputDialog("Bem vinde "+this.getNomeCliente()+" a sua Conta Especial - Nº "+this.getNumero()+" digite:\n1-Debito\n2- Credito\n3- Utilizar o Limite\n4- para sair\n\nSaldo atual: R$"+this.getSaldo()+"\nSaldo do Limite: R$"+this.limite+"\n\n Quantidade de movimentos restantes: "+(10-this.qtdMovimentos)));
 			switch(opc) {
 				case 1:
 					valor = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor a ser Debitado:"));
@@ -81,7 +82,10 @@ public class ContaEspecial extends Conta {
 					JOptionPane.showMessageDialog(null,"Opção invalida!\nPor favor, tente novamente!");
 					break;
 			}
-		}while(opc!=4);
+		}while(opc!=4 && this.qtdMovimentos<=10);
+		if(this.qtdMovimentos>10) {
+			JOptionPane.showMessageDialog(null, "Quantidade de movimentos exedida!");
+		}
 	}
 	
 }
