@@ -22,6 +22,9 @@ public class MainApp {
 		numero = random.nextInt(1000);
 		nome= JOptionPane.showInputDialog("Seja Bem Vinde ao Banco FCBM!\nPoderia nos informar seu nome?");
 		dia = Integer.parseInt(JOptionPane.showInputDialog("Digite o dia de hoje:"));
+		if(dia>31 || dia<=0) {
+			JOptionPane.showMessageDialog(null,"No nosso banco o cliente sempre tem razão! (Mesmo que esse dia não esteja no calendario)");
+		}
 		JOptionPane.showMessageDialog(null,"Olá "+nome+" sua conta foi aberta!\nO numero dela é: "+numero);
 		
 		
