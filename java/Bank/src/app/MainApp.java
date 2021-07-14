@@ -3,6 +3,8 @@ package app;
 import java.util.*;
 import javax.swing.*;
 import entidades.Conta;
+import entidades.ContaCorrente;
+import entidades.ContaEmprestimo;
 import entidades.ContaEspecial;
 import entidades.ContaPoupanca;
 import entidades.contaEstudante;
@@ -27,6 +29,8 @@ public class MainApp {
 		ContaEspecial contEspecial = new ContaEspecial(numero, nome, 1000);
 		ContaPoupanca contPoup = new ContaPoupanca(numero, nome, dia);
 		contaEstudante contEstu = new contaEstudante(numero, nome);
+		ContaEmprestimo contEmpresa = new ContaEmprestimo(numero, nome);
+		ContaCorrente contCorrente = new ContaCorrente(numero, nome);
 		
 		do {
 			JOptionPane.showMessageDialog(null,"Bem Vindo ao Banco G8 - FCBM\nJuntos fazemos o seu Dinheiro evoluir!");
@@ -37,20 +41,53 @@ public class MainApp {
 					contPoup.telas();
 					break;
 				case 2:
-					JOptionPane.showMessageDialog(null,"Estamos implementando! :)");
+					contCorrente.telas();
 					break;
 				case 3:
 					contEspecial.telas();
 					break;
 				case 4:
-					JOptionPane.showMessageDialog(null,"Estamos implementando! :)");
+					contEmpresa.telas();
 					break;
 				case 5:
 					contEstu.telas();
 					break;
 				case 6:
 					JOptionPane.showMessageDialog(null,"Obrigado e volte sempre!");
-					// piadinha do foguete
+					JOptionPane.showMessageDialog(null,"Nunca se esqueça!!!");
+					System.err.println("                                            ,:\r\n"
+							+ "                                          ,' |\r\n"
+							+ "                                         /   :\r\n"
+							+ "                                      --'   /\r\n"
+							+ "                                      \\/ /:/\r\n"
+							+ "                                      / ://_\\\r\n"
+							+ "                                   __/   /\r\n"
+							+ "                                   )'-. /\r\n"
+							+ "                                   ./  :\\\r\n"
+							+ "                                    /.' '\r\n"
+							+ "                                  '/'\r\n"
+							+ "                                  +\r\n"
+							+ "                                 '\r\n"
+							+ "                               `.\r\n"
+							+ "                           .-\"-\r\n"
+							+ "                          (    |\r\n"
+							+ "                       . .-'  '.\r\n"
+							+ "                      ( (.   )8:\r\n"
+							+ "                  .'    / (_  )\r\n"
+							+ "                   _. :(.   )8P  `\r\n"
+							+ "               .  (  `-' (  `.   .\r\n"
+							+ "                .  :  (   .a8a)\r\n"
+							+ "               /_`( \"a `a. )\"'\r\n"
+							+ "           (  (/  .  ' )=='\r\n"
+							+ "          (   (    )  .8\"   +\r\n"
+							+ "            (`'8a.( _(   (\r\n"
+							+ "         ..-. `8P    ) `  )  +\r\n"
+							+ "       -'   (      -ab:  )\r\n"
+							+ "     '    _  `    (8P\"Ya\r\n"
+							+ "   _(    (    )b  -`.  ) +\r\n"
+							+ "  ( 8)  ( _.aP\" _a   \\( \\   *\r\n"
+							+ "+  )/    (8P   (88    )  )\r\n"
+							+ "   (a:f   \"     `\"`"+"\n FOGUETE NÂO TEM RÉ!!!");
 					break;
 				default:
 					JOptionPane.showMessageDialog(null,"Opção invalida!\nTente Novamente!");

@@ -35,7 +35,7 @@ public class contaEstudante extends Conta {
 		
 		int opc;
 		do {
-			opc = Integer.parseInt(JOptionPane.showInputDialog("Bem vinde a sua conta *Estudantil* digite:\n1- Débito\n2- Crédito\n3- Emprestimo Já!\n4- para sair\n\nSaldo Atual: R$"+this.saldo));
+			opc = Integer.parseInt(JOptionPane.showInputDialog("Bem vinde "+this.getNomeCliente()+" a sua Conta Estudantil - Nº "+this.getNumero()+" digite:\n1- Débito\n2- Crédito\n3- Emprestimo Já!\n4- para sair\n\nSaldo Atual: R$"+this.saldo+"\nSaldo para emprestimo: R$"+this.limite+"\n\n Quantidade de movimentos restantes: "+(10-this.qtdMovimentos)));
 			switch(opc) {
 			case 1:
 				saldoDebito = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor desejado: "));
@@ -51,7 +51,7 @@ public class contaEstudante extends Conta {
 				break;
 			case 4:
 				JOptionPane.showMessageDialog(null,"Foi disponível um emprestimo, gostaria de receber?");
-				escolha = Integer.parseInt(JOptionPane.showInputDialog("Digite 1. SIM \n 2. NÃO"));
+				escolha = Integer.parseInt(JOptionPane.showInputDialog("Digite:\n 1. SIM \n 2. NÃO"));
 				if (escolha == 1) {
 					emprestimoJa = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor do empréstimo: "));
 					this.emprestimo(emprestimoJa);
