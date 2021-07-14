@@ -5,6 +5,7 @@ import javax.swing.*;
 import entidades.Conta;
 import entidades.ContaEspecial;
 import entidades.ContaPoupanca;
+import entidades.contaEstudante;
 
 public class MainApp {
 
@@ -25,6 +26,7 @@ public class MainApp {
 		// Instanciando Objetos:
 		ContaEspecial contEspecial = new ContaEspecial(numero, nome, 1000);
 		ContaPoupanca contPoup = new ContaPoupanca(numero, nome, dia);
+		contaEstudante contEstu = new contaEstudante(numero, nome);
 		
 		do {
 			JOptionPane.showMessageDialog(null,"Bem Vindo ao Banco G8 - FCBM\nJuntos fazemos o seu Dinheiro evoluir!");
@@ -44,7 +46,7 @@ public class MainApp {
 					JOptionPane.showMessageDialog(null,"Estamos implementando! :)");
 					break;
 				case 5:
-					JOptionPane.showMessageDialog(null,"Estamos implementando! :)");
+					contEstu.telas();
 					break;
 				case 6:
 					JOptionPane.showMessageDialog(null,"Obrigado e volte sempre!");

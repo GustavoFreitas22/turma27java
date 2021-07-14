@@ -10,7 +10,7 @@ public class LojaMain {
 		Scanner read = new Scanner(System.in);
 		String nome;
 		int preco;
-		List <Produto> item = new ArrayList<>();
+		List <Produto> item = new ArrayList();
 		
 		for(int i = 0; i<2; i++) {
 			System.out.println("Qual o nome do produto?");
