@@ -20,13 +20,26 @@ public class ContaEspecial extends Conta {
 	}
 
 	public void usarLimite(double valor) {
-		if(valor>this.limite) {
+		double aux;
+		
+		if(valor>(this.limite+this.saldo)) {
 			JOptionPane.showMessageDialog(null,"Falha na operação!\nSaldo insulficiente");
-		}else if(valor<=0) {
-			JOptionPane.showMessageDialog(null,"Valor invalido!");
-		}else {
-			this.limite = this.limite-valor;
-			super.credito(valor);
+		}else if(valor> this.saldo && valor<= this.limite) {
+			aux = this.saldo - valor;
+			limite = limite+aux;
+			if(this.saldo!=0) {
+				this.debito(this.saldo);
+			}
+			this.qtdMovimentos++;
+			
+			
+		}else if((this.saldo+this.limite)>valor){
+			aux = this.saldo - valor;
+			limite = limite+aux;
+			if(this.saldo!=0) {
+				this.debito(this.saldo);
+			}
+			this.qtdMovimentos++;
 		}
 		
 	}
@@ -40,8 +53,8 @@ public class ContaEspecial extends Conta {
 			JOptionPane.showMessageDialog(null,"Falha na operação!\nSaldo insulficiente");
 			opc = Integer.parseInt(JOptionPane.showInputDialog("Deseja utilizar o limite?\nDigite:\n1- Sim\n2- Não\n\nSaldo atual Limite: R$"+this.limite));
 			if(opc==1) {
-				double valor = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor desejado:"));
-				this.usarLimite(valor);
+//				double valor = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor desejado:"));
+				this.usarLimite(valorDebito);
 			}else if(opc==2) {
 				JOptionPane.showMessageDialog(null,"Muito obrigado! :)");
 			}else {
@@ -61,7 +74,7 @@ public class ContaEspecial extends Conta {
 		int opc;
 		double valor;
 		do {
-			opc = Integer.parseInt(JOptionPane.showInputDialog("Bem vinde "+this.getNomeCliente()+" a sua Conta Especial - Nº "+this.getNumero()+" digite:\n1-Debito\n2- Credito\n3- Utilizar o Limite\n4- para sair\n\nSaldo atual: R$"+this.getSaldo()+"\nSaldo do Limite: R$"+this.limite+"\n\n Quantidade de movimentos restantes: "+(10-this.qtdMovimentos)));
+			opc = Integer.parseInt(JOptionPane.showInputDialog("Bem vinde "+this.getNomeCliente()+" a sua Conta Especial - Nº "+this.getNumero()+" digite:\n1-Debito\n2- Credito\n3- para sair\n\nSaldo atual: R$"+this.getSaldo()+"\nSaldo do Limite: R$"+this.limite+"\n\n Quantidade de movimentos restantes: "+(10-this.qtdMovimentos)));
 			switch(opc) {
 				case 1:
 					valor = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor a ser Debitado:"));
@@ -72,17 +85,13 @@ public class ContaEspecial extends Conta {
 					this.credito(valor);
 					break;
 				case 3:
-					valor = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor a ser utilizado do limite:"));
-					this.usarLimite(valor);
-					break;
-				case 4:
 					JOptionPane.showMessageDialog(null,"Obrigado por Utilizar O FCBM!\n Volte Sempre!");
 					break;
 				default: 
 					JOptionPane.showMessageDialog(null,"Opção invalida!\nPor favor, tente novamente!");
 					break;
 			}
-		}while(opc!=4 && this.qtdMovimentos<=10);
+		}while(opc!=3 && this.qtdMovimentos<=10);
 		if(this.qtdMovimentos>10) {
 			JOptionPane.showMessageDialog(null, "Quantidade de movimentos exedida!");
 		}
