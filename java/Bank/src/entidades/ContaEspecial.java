@@ -74,7 +74,7 @@ public class ContaEspecial extends Conta {
 		int opc;
 		double valor;
 		do {
-			opc = Integer.parseInt(JOptionPane.showInputDialog("Bem vinde "+this.getNomeCliente()+" a sua Conta Especial - Nº "+this.getNumero()+" digite:\n1-Debito\n2- Credito\n3- para sair\n\nSaldo atual: R$"+this.getSaldo()+"\nSaldo do Limite: R$"+this.limite+"\n\n Quantidade de movimentos restantes: "+(10-this.qtdMovimentos)));
+			opc = Integer.parseInt(JOptionPane.showInputDialog("Bem vinde "+this.getNomeCliente()+"\n A sua Conta Especial - Nº "+this.getNumero()+" digite:\n1-Debito\n2- Credito\n3- para sair\n\nSaldo atual: R$"+this.getSaldo()+"\nSaldo do Limite: R$"+this.limite+"\n\n Quantidade de movimentos restantes: "+(10-this.qtdMovimentos)));
 			switch(opc) {
 				case 1:
 					valor = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor a ser Debitado:"));

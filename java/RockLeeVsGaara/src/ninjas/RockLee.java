@@ -76,4 +76,9 @@ public class RockLee extends Ninja{
 		System.out.println("-RockLee:\nEssa é a minha técnica lendaria!!!\nPortão da dor ABRAAAAAA!!! ");
 		this.qtdDesvios+=10;
 	}
+	
+	@Override
+	public void mostraStatus() {
+		System.out.println("Ninja RockLee:"+"\nPontos de HP: "+this.hp+"\nA força Atual: "+this.forca+"\nQuantide de esquivas restantes: "+this.qtdDesvios);
+	}
 }

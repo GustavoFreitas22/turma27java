@@ -35,7 +35,7 @@ public class contaEstudante extends Conta {
 		
 		int opc;
 		do {
-			opc = Integer.parseInt(JOptionPane.showInputDialog("Bem vinde "+this.getNomeCliente()+" a sua Conta Estudantil - Nº "+this.getNumero()+" digite:\n1- Débito\n2- Crédito\n3- Emprestimo Já!\n4- para sair\n\nSaldo Atual: R$"+this.saldo+"\nSaldo para emprestimo: R$"+this.limite+"\n\n Quantidade de movimentos restantes: "+(10-this.qtdMovimentos)));
+			opc = Integer.parseInt(JOptionPane.showInputDialog("Bem vinde "+this.getNomeCliente()+"\n A sua Conta Estudantil - Nº "+this.getNumero()+" digite:\n1- Débito\n2- Crédito\n3- Emprestimo Já!\n4- para sair\n\nSaldo Atual: R$"+this.saldo+"\nSaldo para emprestimo: R$"+this.limite+"\n\n Quantidade de movimentos restantes: "+(10-this.qtdMovimentos)));
 			switch(opc) {
 			case 1:
 				saldoDebito = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor desejado: "));

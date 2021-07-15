@@ -20,6 +20,7 @@ public class MainApp {
 		// Criação de conta:
 		Random random = new Random();
 		numero = random.nextInt(1000);
+		
 		nome= JOptionPane.showInputDialog("Seja Bem Vinde ao Banco FCBM!\nPoderia nos informar seu nome?");
 		dia = Integer.parseInt(JOptionPane.showInputDialog("Digite o dia de hoje:"));
 		if(dia>31 || dia<=0) {
@@ -58,7 +59,7 @@ public class MainApp {
 				case 6:
 					JOptionPane.showMessageDialog(null,"Obrigado e volte sempre!");
 					JOptionPane.showMessageDialog(null,"Nunca se esqueça!!!");
-					System.err.println("                                            ,:\r\n"
+					System.err.println("                                            ^ ,:\r\n"
 							+ "                                          ,' |\r\n"
 							+ "                                         /   :\r\n"
 							+ "                                      --'   /\r\n"
@@ -90,7 +91,7 @@ public class MainApp {
 							+ "   _(    (    )b  -`.  ) +\r\n"
 							+ "  ( 8)  ( _.aP\" _a   \\( \\   *\r\n"
 							+ "+  )/    (8P   (88    )  )\r\n"
-							+ "   (a:f   \"     `\"`"+"\n FOGUETE NÂO TEM RÉ!!!");
+							+ "   (a:f   \"     `\"`"+"\n\n FOGUETE NÃO TEM RÉ!!!");
 					break;
 				default:
 					JOptionPane.showMessageDialog(null,"Opção invalida!\nTente Novamente!");

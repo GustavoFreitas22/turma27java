@@ -33,7 +33,7 @@ public class ContaEmprestimo extends Conta {
 		int choic;
 
 		do {
-			opc = Integer.parseInt(JOptionPane.showInputDialog("Bem vinde "+this.getNomeCliente()+" a sua Conta Empresarial - Nº "+this.getNumero()+" digite:\n1- Credito\n2- Debito\n3- Pegar emprestimo\n4- para sair\n\nSaldo Atual: R$"+this.saldo+"\nSaldo para emprestimo: R$"+this.limite+"\n\n Quantidade de movimentos restantes: "+(10-this.qtdMovimentos)));
+			opc = Integer.parseInt(JOptionPane.showInputDialog("Bem vinde "+this.getNomeCliente()+"\nA sua Conta Empresarial - Nº "+this.getNumero()+" digite:\n1- Credito\n2- Debito\n3- Pegar emprestimo\n4- para sair\n\nSaldo Atual: R$"+this.saldo+"\nSaldo para emprestimo: R$"+this.limite+"\n\n Quantidade de movimentos restantes: "+(10-this.qtdMovimentos)));
 			switch(opc) {
 			case 1:
 				valor=Double.parseDouble(JOptionPane.showInputDialog("Digite o valor desejado: "));

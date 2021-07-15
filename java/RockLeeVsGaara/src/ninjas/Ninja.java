@@ -3,9 +3,9 @@ package ninjas;
 public class Ninja {
 	private String nome;
 	private String aldeia;
-	private int forca;
-	private int hp = 400;
-	private int mana;
+	protected int forca;
+	protected int hp = 400;
+	private boolean vencedor;
 	public Ninja(String nome, String aldeia, int forca) {
 		super();
 		this.nome = nome;
@@ -36,13 +36,12 @@ public class Ninja {
 	public void setHp(int hp) {
 		this.hp = hp;
 	}
-	public int getMana() {
-		return mana;
+	public boolean isVencedor() {
+		return vencedor;
 	}
-	public void setMana(int mana) {
-		this.mana = mana;
+	public void setVencedor(boolean vencedor) {
+		this.vencedor = vencedor;
 	}
-	
 	public void receberGolpe(int danoGolpe) {
 		this.hp = this.hp-danoGolpe;
 		if(this.hp<=0) {
@@ -53,6 +52,9 @@ public class Ninja {
 	}
 	public void morrer() {
 		System.out.println("Sinto muito... mas voce perdeu a luta "+this.nome);
+	}
+	public void mostraStatus() {
+		System.out.println("Pontos de HP: "+this.hp+"\nA força Atual: "+this.forca);
 	}
 	
 }

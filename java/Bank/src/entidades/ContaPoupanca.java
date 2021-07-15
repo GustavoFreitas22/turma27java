@@ -37,7 +37,7 @@ public class ContaPoupanca extends Conta{
 		int dia;
 		boolean verificado = false;
 		do {
-			opc = Integer.parseInt(JOptionPane.showInputDialog("Bem vinde "+this.getNomeCliente()+" a sua Conta Poupança - Nº "+this.getNumero()+" digite:\n1-Debito\n2- Credito\n3- Verificar data de Aniversario da conta\n4- para sair\n\nSaldo atual: R$"+this.getSaldo()+"\n\n Quantidade de movimentos restantes: "+(10-this.qtdMovimentos)));
+			opc = Integer.parseInt(JOptionPane.showInputDialog("Bem vinde "+this.getNomeCliente()+"\nA sua Conta Poupança - Nº "+this.getNumero()+" digite:\n1-Debito\n2- Credito\n3- Verificar data de Aniversario da conta\n4- para sair\n\nSaldo atual: R$"+this.getSaldo()+"\n\n Quantidade de movimentos restantes: "+(10-this.qtdMovimentos)));
 			switch(opc) {
 				case 1:
 					valor = Double.parseDouble(JOptionPane.showInputDialog("Digite o valor a ser Debitado:"));
