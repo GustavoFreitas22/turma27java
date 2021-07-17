@@ -5,7 +5,7 @@ public class Ninja {
 	private String aldeia;
 	protected int forca;
 	protected int hp = 400;
-	private boolean vencedor;
+	private boolean vencedor = false;
 	public Ninja(String nome, String aldeia, int forca) {
 		super();
 		this.nome = nome;
@@ -48,13 +48,16 @@ public class Ninja {
 			this.morrer();
 		}else {
 			System.out.println("Ai! recebi "+danoGolpe+" e agora só tenho HP:"+this.hp);
+			System.out.println("----------------------------------");
 		}
 	}
 	public void morrer() {
 		System.out.println("Sinto muito... mas voce perdeu a luta "+this.nome);
+		vencedor = false;
 	}
 	public void mostraStatus() {
 		System.out.println("Pontos de HP: "+this.hp+"\nA força Atual: "+this.forca);
+		System.out.println("----------------------------------");
 	}
 	
 }
