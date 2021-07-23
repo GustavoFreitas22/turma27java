@@ -66,6 +66,7 @@ public class RockLee extends Ninja{
 		this.peso = false;
 		System.out.println("-RockLee:\nObrigado por me deixar tirar os pesos Gai Sensei");
 		System.out.println("----------------------------------");
+		this.forca += 5;
 	}
 	public int lotusPrimaria() {
 		if(peso==false) {
@@ -81,7 +82,7 @@ public class RockLee extends Ninja{
 	}
 	public void abrirPortoesChakra() {
 		
-		this.setForca(10);
+		this.forca += 5;
 		System.out.println("-RockLee:\nEssa é a minha técnica lendaria!!!\nPortão da dor ABRAAAAAA!!! ");
 		System.out.println("----------------------------------");
 		this.qtdDesvios+=10;
